@@ -65,7 +65,7 @@ namespace Notepad
         private void настройкиШрифтаToolStripMenuItem_Click(object sender, EventArgs e)
         {
             fontDialog1.ShowDialog();
-            richTextBox1.Font = fontDialog1.Font;
+            richTextBox1.SelectionFont = fontDialog1.Font;
         }
 
         private void настройкиФонаToolStripMenuItem_Click(object sender, EventArgs e)
@@ -127,11 +127,6 @@ namespace Notepad
             MessageBox.Show("Программа сделана Архиповым Александром, группа 09-322", "О программе");
         }
 
-        private void выделитьЖирнымШрифтомToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            richTextBox1.SelectionFont = new Font(richTextBox1.SelectionFont, FontStyle.Bold);
-        }
-
         private void печатьToolStripMenuItem_Click(object sender, EventArgs e)
         {
             PrintDocument document = new PrintDocument();
@@ -148,24 +143,27 @@ namespace Notepad
             e.Graphics.DrawString(richTextBox1.Text, richTextBox1.Font, Brushes.Black, 0, 0);
         }
 
-        private void выделитьЖионымШрифтомToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            richTextBox1.SelectionFont = new Font(richTextBox1.SelectionFont, FontStyle.Bold);
-        }
-
-        private void отменитьВыделениеToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            richTextBox1.SelectionFont = new Font(richTextBox1.SelectionFont, FontStyle.Regular);
-        }
-
         private void выходToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Environment.Exit(1);
         }
 
-        private void отменитьВыделениеToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void цветШрифтаToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            richTextBox1.SelectionFont = new Font(richTextBox1.SelectionFont, FontStyle.Regular);
+            colorDialog1.ShowDialog();
+            richTextBox1.SelectionColor = colorDialog1.Color;
+        }
+
+        private void настройкаШрифтаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fontDialog1.ShowDialog();
+            richTextBox1.SelectionFont = fontDialog1.Font;
+        }
+
+        private void цветШрифтаToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            colorDialog1.ShowDialog();
+            richTextBox1.SelectionColor = colorDialog1.Color;
         }
     }
 }
